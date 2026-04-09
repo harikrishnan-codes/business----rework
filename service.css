@@ -1,7 +1,6 @@
-/* --- Services Hero (Overlay Concept) --- */
 .services-hero-simple {
     position: relative;
-    height: 70vh; /* Shorter than landing hero, better for inner pages */
+    height: 70vh;
     min-height: 500px;
     width: 100%;
     display: flex;
@@ -10,35 +9,30 @@
     overflow: hidden;
 }
 
-/* Layer 1: Background Image */
 .sh-image-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+    background-image: url('./assets/img\ 4.webp');
     background-size: cover;
     background-position: center;
     z-index: 1;
 }
 
-/* Layer 2: The Teal Overlay */
 .sh-overlay-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg, 
-        rgba(19, 84, 72, 0.94) 0%, 
-        rgba(13, 61, 52, 0.88) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(19, 84, 72, 0.7) 0%,
+            rgba(13, 61, 52, 0.7) 100%);
     z-index: 2;
 }
 
-/* Layer 3: Content */
 .sh-container {
     position: relative;
     z-index: 10;
@@ -70,7 +64,7 @@
 }
 
 .sh-content h1 span {
-    color: var(--accent-color); /* Your #FC551D Orange */
+    color: var(--accent-color);
 }
 
 .sh-content p {
@@ -86,7 +80,11 @@
     gap: 20px;
 }
 
-/* --- Responsive 768px --- */
+.services-hero-simple .container .sh-content .sh-actions .service {
+    color: var(--bg-surface);
+    border: 1px solid var(--bg-surface);
+}
+
 @media (max-width: 768px) {
     .services-hero-simple {
         height: auto;
@@ -121,10 +119,9 @@
 
 
 
-/* --- Core Features Redesign --- */
 .core-features {
     padding: 120px 0;
-    background-color: var(--secondary-color); /* Off-white */
+    background-color: var(--secondary-color);
     overflow: hidden;
 }
 
@@ -134,7 +131,6 @@
     margin-top: 60px;
 }
 
-/* --- The Modern Feature Card --- */
 .feature-card-v3 {
     flex: 1;
     background: var(--white);
@@ -147,10 +143,12 @@
     overflow: hidden;
 }
 
-/* Border Trace Animation */
 .f-card-border {
     position: absolute;
-    top: 0; left: 0; width: 0; height: 3px;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
     background: var(--accent-color);
     transition: width 0.4s ease;
 }
@@ -161,14 +159,13 @@
 }
 
 .feature-card-v3:hover .f-card-border {
-    width: 100%; /* Line draws across the top */
+    width: 100%;
 }
 
-.feature-card-v3:hover h3{
+.feature-card-v3:hover h3 {
     color: var(--accent-color);
 }
 
-/* Icon & Content */
 .f-icon-box {
     width: 70px;
     height: 70px;
@@ -186,7 +183,7 @@
 .feature-card-v3:hover .f-icon-box {
     background: var(--primary-color);
     color: var(--white);
-    transform: rotateY(180deg); /* Modern flip effect */
+    transform: rotateY(180deg);
 }
 
 .feature-card-v3 h3 {
@@ -222,7 +219,6 @@
     font-size: 0.7rem;
 }
 
-/* --- Responsive 768px --- */
 @media (max-width: 992px) {
     .features-flex {
         flex-direction: column;
@@ -248,8 +244,7 @@
         display: inline-block;
         text-align: left;
     }
-    
-    /* Reveal the border-trace by default on mobile */
+
     .f-card-border {
         width: 60px;
         left: 50%;
@@ -263,7 +258,6 @@
 
 
 
-/* --- Service Tiers Section --- */
 .service-tiers {
     padding: 120px 0;
     background-color: var(--secondary-color);
@@ -280,7 +274,6 @@
     align-items: center;
 }
 
-/* --- The Tier Card --- */
 .tier-card {
     background: var(--white);
     padding: 50px;
@@ -292,7 +285,6 @@
     text-align: center;
 }
 
-/* Featured Tier Styling */
 .tier-featured {
     border-color: var(--accent-color);
     background: var(--white);
@@ -300,7 +292,6 @@
     z-index: 2;
 }
 
-/* Hover Interaction: Depth-Focus */
 .tier-grid:hover .tier-card:not(:hover) {
     opacity: 0.6;
     transform: scale(0.95);
@@ -315,7 +306,6 @@
     box-shadow: 0 40px 80px rgba(19, 84, 72, 0.15);
 }
 
-/* Inner Content */
 .tier-badge {
     display: inline-block;
     padding: 6px 18px;
@@ -365,7 +355,6 @@
     color: var(--accent-color);
 }
 
-/* Button Styling */
 .btn-tier {
     display: block;
     width: 100%;
@@ -393,9 +382,11 @@
     border-color: var(--accent-color);
 }
 
-/* --- Responsive 768px --- */
 @media (max-width: 992px) {
-    .tier-grid { gap: 20px; padding: 0 20px; }
+    .tier-grid {
+        gap: 20px;
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -412,7 +403,6 @@
         padding: 40px 25px;
     }
 
-    /* Disable blur/scale logic on mobile for usability */
     .tier-grid:hover .tier-card:not(:hover) {
         opacity: 1;
         transform: none;
@@ -429,7 +419,6 @@
 
 
 
-/* --- Methodology Section --- */
 .methodology {
     position: relative;
     padding: 120px 0;
@@ -437,8 +426,6 @@
     overflow: hidden;
 }
 
-/* --- THE MESH BACKGROUND --- */
-/* This creates a high-end moving color look using only CSS */
 .mesh-bg {
     position: absolute;
     top: 0;
@@ -446,7 +433,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--secondary-color);
-    background-image: 
+    background-image:
         radial-gradient(at 0% 0%, rgba(19, 84, 72, 0.05) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(252, 85, 29, 0.05) 0px, transparent 50%),
         radial-gradient(at 50% 50%, rgba(19, 84, 72, 0.03) 0px, transparent 50%);
@@ -458,7 +445,6 @@
     z-index: 2;
 }
 
-/* --- Process Layout --- */
 .process-steps {
     display: flex;
     flex-direction: column;
@@ -477,13 +463,17 @@
     border-radius: 30px;
     border: 1px solid var(--white);
     transition: var(--transition);
-    /* Pure CSS Entrance */
     animation: revealIn 0.8s ease-out forwards;
     opacity: 0;
 }
 
-.step-item:nth-child(2) { animation-delay: 0.2s; }
-.step-item:nth-child(3) { animation-delay: 0.4s; }
+.step-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.step-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
 
 .step-item:hover {
     transform: translateX(15px);
@@ -506,7 +496,7 @@
     transform: scale(1.1);
 }
 
-.step-item:hover .step-content h3{
+.step-item:hover .step-content h3 {
     color: var(--accent-color);
 }
 
@@ -520,19 +510,18 @@
     color: var(--text-muted);
 }
 
-/* --- Entrance Animation --- */
 @keyframes revealIn {
     from {
         opacity: 0;
         transform: translateY(30px) scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
-/* --- Responsive 768px --- */
 @media (max-width: 768px) {
     .methodology {
         padding: 80px 0;
@@ -546,7 +535,7 @@
     }
 
     .step-item:hover {
-        transform: translateY(-10px); /* Vertical lift on mobile */
+        transform: translateY(-10px);
     }
 
     .step-number {
@@ -559,7 +548,6 @@
 
 
 
-/* --- Final Stats Section Styles --- */
 .stat-highlights {
     padding: 120px 0;
     background-color: var(--primary-color);
@@ -567,18 +555,26 @@
     overflow: hidden;
 }
 
-.stat-highlights .container .section-header span{
+.stat-highlights .container .section-header span {
     color: var(--accent-color);
 }
 
 .stat-highlights .container .section-header h2,
-.stat-highlights .container .section-header p{
+.stat-highlights .container .section-header p {
     color: var(--bg-surface);
 }
 
-/* Header Inversion */
-.sh-light h2 { color: var(--white); text-align: center; }
-.sh-light p { color: rgba(255, 255, 255, 0.7); text-align: center; margin: 0 auto 60px; }
+.sh-light h2 {
+    color: var(--white);
+    text-align: center;
+}
+
+.sh-light p {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin: 0 auto 60px;
+}
+
 .sh-light .badge-invert {
     display: block;
     width: fit-content;
@@ -594,7 +590,6 @@
     gap: 30px;
 }
 
-/* Card Design */
 .stat-card-v2 {
     position: relative;
     padding: 50px 20px;
@@ -643,17 +638,28 @@
     transition: width 0.4s ease;
 }
 
-.stat-card-v2:hover .stat-line { width: 80px; }
+.stat-card-v2:hover .stat-line {
+    width: 80px;
+}
 
-/* Responsive Logic */
 @media (max-width: 992px) {
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .stat-highlights { padding: 80px 0; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .stat-number { font-size: 3rem; }
+    .stat-highlights {
+        padding: 80px 0;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
 }
 
 
@@ -664,10 +670,9 @@
 
 
 
-/* --- Industry Impact Showcase --- */
 .industry-impact {
     padding: 120px 0;
-    background-color: var(--secondary-color); /* Your Off-White */
+    background-color: var(--secondary-color);
     overflow: hidden;
 }
 
@@ -678,7 +683,6 @@
     padding-top: 40px;
 }
 
-/* --- The Shutter Card --- */
 .impact-card {
     position: relative;
     height: 400px;
@@ -690,42 +694,45 @@
     overflow: hidden;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: 0 10px 30px var(--shadow);
-    /* Entrance Animation */
     animation: entranceFadeSlide 0.8s ease-out forwards;
     opacity: 0;
 }
 
-/* Staggered Entrance */
-.impact-card:nth-child(1) { animation-delay: 0.1s; }
-.impact-card:nth-child(2) { animation-delay: 0.3s; }
-.impact-card:nth-child(3) { animation-delay: 0.5s; }
+.impact-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
 
-/* The Hover Effect - Card Scale */
+.impact-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.impact-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
 .impact-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 50px rgba(19, 84, 72, 0.15);
 }
 
-/* --- The Shutter (CSS Overlay) --- */
 .shutter-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(
-        to bottom, 
-        rgba(19, 84, 72, 0.6) 0%, /* Transparent Green top */
-        rgba(13, 61, 52, 0.95) 80% /* Dark Green bottom */
-    );
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(19, 84, 72, 0.6) 0%,
+            rgba(13, 61, 52, 0.95) 80%);
     z-index: 1;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    transform: translateY(0); /* Default State */
+    transform: translateY(0);
 }
 
-/* On hover, the shutter "slides up" slightly to reveal more image */
 .impact-card:hover .shutter-overlay {
     transform: translateY(-20%);
 }
 
-/* --- Card Content --- */
 .card-content {
     position: absolute;
     bottom: 0;
@@ -739,7 +746,7 @@
 
 .card-category {
     display: inline-block;
-    color: var(--accent-color); /* Your Orange */
+    color: var(--accent-color);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -755,7 +762,6 @@
     transition: var(--transition);
 }
 
-/* Hidden Description - Reveals on Hover */
 .card-desc {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.8);
@@ -779,9 +785,8 @@
     transition: opacity 0.4s ease 0.1s, color 0.3s ease;
 }
 
-/* --- The Hover Reveal Logic --- */
 .impact-card:hover .card-desc {
-    max-height: 100px; /* Expands to fit content */
+    max-height: 100px;
     opacity: 1;
     margin-bottom: 25px;
 }
@@ -794,19 +799,18 @@
     color: var(--accent-color);
 }
 
-/* --- Animations --- */
 @keyframes entranceFadeSlide {
     from {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* --- Responsive 768px --- */
 @media (max-width: 992px) {
     .impact-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -834,7 +838,7 @@
     }
 
     .impact-card:hover .card-desc {
-        max-height: 150px; /* Allow more space on mobile if needed */
+        max-height: 150px;
     }
 }
 
@@ -846,7 +850,6 @@
 
 
 
-/* --- Testimonials Spotlight Section --- */
 .testimonials-spotlight {
     padding: 120px 0;
     background-color: var(--white);
@@ -860,15 +863,12 @@
     padding: 20px 0;
 }
 
-/* --- The Spotlight Animation Logic --- */
-/* When the group is hovered, fade all cards */
 .spotlight-group:hover .testi-card {
     opacity: 0.4;
     filter: blur(2px) grayscale(100%);
     transform: scale(0.95);
 }
 
-/* Then, make the SPECIFIC hovered card bright and sharp */
 .spotlight-group .testi-card:hover {
     opacity: 1;
     filter: blur(0) grayscale(0);
@@ -878,7 +878,6 @@
     z-index: 10;
 }
 
-/* --- Card Styling --- */
 .testi-card {
     background: var(--bg-surface);
     padding: 40px;
@@ -928,7 +927,6 @@
     color: var(--text-muted);
 }
 
-/* --- Responsive 768px --- */
 @media (max-width: 992px) {
     .spotlight-group {
         grid-template-columns: repeat(2, 1fr);
@@ -944,7 +942,6 @@
         grid-template-columns: 1fr;
     }
 
-    /* Disable spotlight logic on mobile for better accessibility */
     .spotlight-group:hover .testi-card {
         opacity: 1;
         filter: none;
@@ -966,7 +963,6 @@
 
 
 
-/* --- Reveal CTA Section --- */
 .reveal-cta {
     padding: 100px 0;
     background-color: var(--primary-color);
@@ -979,14 +975,13 @@
     position: relative;
     max-width: 900px;
     margin: 0 auto;
-    height: 350px; /* Fixed height to prevent page jumping during reveal */
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-/* --- Initial State Styling --- */
 .cta-initial-state {
     text-align: center;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1004,14 +999,13 @@
     animation: bounceSoft 2s infinite;
 }
 
-/* --- Reveal State Styling (Hidden by Default) --- */
 .cta-reveal-state {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-dark); /* Darker green for depth */
+    background: var(--primary-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1020,19 +1014,28 @@
     padding: 40px;
     border-radius: 30px;
     border: 1px solid rgba(252, 85, 29, 0.3);
-    
-    /* The Magic: Hidden state */
+
     opacity: 0;
     transform: scale(0.9);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
 }
 
-.cta-reveal-state h2 { color: var(--white); font-size: 2.8rem; }
-.cta-reveal-state h2 span { color: var(--accent-color); }
-.cta-reveal-state p { color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; max-width: 500px; }
+.cta-reveal-state h2 {
+    color: var(--white);
+    font-size: 2.8rem;
+}
 
-/* --- THE HOVER ACTION --- */
+.cta-reveal-state h2 span {
+    color: var(--accent-color);
+}
+
+.cta-reveal-state p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
 .cta-reveal-wrapper:hover .cta-initial-state {
     opacity: 0;
     transform: translateY(-20px) scale(0.8);
@@ -1044,26 +1047,41 @@
     z-index: 3;
 }
 
-/* --- Animations --- */
-@keyframes bounceSoft {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
+.cta-reveal-wrapper .cta-reveal-state .cta-btns .btn {
+    color: var(--bg-surface);
+    border: 1px solid var(--bg-surface);
 }
 
-/* --- Responsive 768px --- */
+@keyframes bounceSoft {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
+
 @media (max-width: 768px) {
     .cta-reveal-wrapper {
         height: auto;
         min-height: 400px;
     }
 
-    .cta-initial-state h2 { font-size: 1.8rem; }
-    .cta-reveal-state h2 { font-size: 1.8rem; }
-
-    /* On mobile, we keep the reveal state visible or use a click trigger */
-    .cta-initial-state {
-        display: none; /* Hide initial state on mobile for better UX */
+    .cta-initial-state h2 {
+        font-size: 1.8rem;
     }
+
+    .cta-reveal-state h2 {
+        font-size: 1.8rem;
+    }
+
+    .cta-initial-state {
+        display: none;
+    }
+
     .cta-reveal-state {
         position: relative;
         opacity: 1;
