@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="auth-bg-animation">
+        <div class="moving-grid"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="auth-wrapper">
+        <div class="auth-card" data-aos="zoom-in">
+
+            <div class="form-container active" id="signup-section">
+                <div class="auth-header">
+                    <span class="badge">Join the Vision</span>
+                    <h2>Create <span>Account</span></h2>
+                    <p>Strategic growth begins with a single connection.</p>
+                </div>
+
+                <form id="signup-form">
+                    <div class="input-group">
+                        <label>Select Role</label>
+                        <div class="role-selector">
+                            <input type="radio" name="role" value="customer" id="role-user" checked>
+                            <label for="role-user" class="role-box"><i class="fas fa-user"></i> Customer</label>
+                            <input type="radio" name="role" value="admin" id="role-admin">
+                            <label for="role-admin" class="role-box"><i class="fas fa-user-shield"></i> Admin</label>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="signup-name" placeholder="John Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="signup-email" placeholder="vance@enterprise.com" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="signup-password" placeholder="••••••••" required>
+                            <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirm Password</label>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock-open"></i>
+                            <input type="password" id="signup-confirm-password" placeholder="••••••••" required>
+                            <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Regiister</button>
+                    <div class="auth-footer">
+                        <p>Already a member?
+                            <a href="javascript:void(0)" onclick="toggleSection('login-section')">Log In</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container" id="login-section">
+                <div class="auth-header">
+                    <span class="badge">Authentication</span>
+                    <h2>Welcome <span>Back</span></h2>
+                    <p>Enter your credentials to access your dashboard.</p>
+                </div>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" id="login-email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="password-header">
+                            <label>Password</label>
+                            <a href="javascript:void(0)" class="forgot-link"
+                                onclick="toggleSection('forgot-section')">Forgot?</a>
+                        </div>
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="login-password" required>
+                            <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Log In</button>
+                    <div class="auth-footer">
+                        <p>New here?
+                            <a href="javascript:void(0)" onclick="toggleSection('signup-section')">Sign Up</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container" id="forgot-section">
+                <div class="auth-header">
+                    <span class="badge">Security</span>
+                    <h2>Reset <span>Password</span></h2>
+                    <p>Enter your email and we'll send you recovery instructions.</p>
+                </div>
+
+                <form id="forgot-form" action="./404.html" method="GET">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <div class="input-field">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" placeholder="your-email@domain.com" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Reset Password</button>
+
+                    <div class="auth-footer">
+                        <p>Wait, I remember! <a href="javascript:void(0)" onclick="toggleSection('login-section')">Back
+                                to Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Animations
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            setupPasswordToggles();
+
+            const signupForm = document.getElementById('signup-form');
+            const loginForm = document.getElementById('login-form');
+
+            // 1. SIGN UP LOGIC
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const password = document.getElementById('signup-password').value;
+                const confirm = document.getElementById('signup-confirm-password').value;
+                const role = document.querySelector('input[name="role"]:checked').value;
+                const email = document.getElementById('signup-email').value;
+
+                if (password !== confirm) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // Store role & email
+                localStorage.setItem('userRole', role);
+                localStorage.setItem('userEmail', email);
+
+                alert("Registration Successful! Please Login.");
+                toggleSection('login-section'); // SWITCH TYPE ACTION
+            });
+
+            // 2. LOGIN LOGIC
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const savedRole = localStorage.getItem('userRole');
+
+                if (!savedRole) {
+                    alert("No account found. Please sign up first.");
+                    toggleSection('signup-section');
+                    return;
+                }
+
+                // REDIRECT BASED ON ROLE
+                if (savedRole === 'admin') {
+                    window.location.href = 'admin.html';
+                } else {
+                    window.location.href = 'customer.html';
+                }
+            });
+        });
+
+        // THE SWITCHING FUNCTION
+        function toggleSection(id) {
+            // Hide all containers
+            document.querySelectorAll('.form-container').forEach(form => {
+                form.classList.remove('active');
+            });
+            // Show the selected one
+            document.getElementById(id).classList.add('active');
+        }
+
+        function setupPasswordToggles() {
+            document.querySelectorAll('.eye-toggle').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const input = this.previousElementSibling;
+                    const icon = this.querySelector('i');
+                    input.type = input.type === 'password' ? 'text' : 'password';
+                    icon.classList.toggle('fa-eye');
+                    icon.classList.toggle('fa-eye-slash');
+                });
+            });
+        }
+
+
+
+
+
+
+        function toggleSection(id) {
+            // Hide all containers with a small fade effect
+            document.querySelectorAll('.form-container').forEach(f => {
+                f.classList.remove('active');
+            });
+            // Show target
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+        }
+
+        function setupPasswordToggles() {
+            // This looks for EVERY button with class .eye-toggle
+            document.querySelectorAll('.eye-toggle').forEach(btn => {
+                btn.onclick = function () {
+                    // Finding the specific input field before this button
+                    const input = this.parentElement.querySelector('input');
+                    const icon = this.querySelector('i');
+
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        icon.classList.replace('fa-eye', 'fa-eye-slash');
+                    } else {
+                        input.type = 'password';
+                        icon.classList.replace('fa-eye-slash', 'fa-eye');
+                    }
+                };
+            });
+        }
+
+        // Call setup on load
+        document.addEventListener('DOMContentLoaded', setupPasswordToggles);
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // ... your existing AOS and Sidebar toggle code ...
+
+            displayUserEmail();
+        });
+
+        function displayUserEmail() {
+            // 1. Get the email and role from localStorage
+            const savedEmail = localStorage.getItem('userEmail');
+            const userEmailElement = document.getElementById('user-display-email');
+
+            // 2. Check if the email exists
+            if (savedEmail) {
+                // If the email is long, we can truncate it for the sidebar UI
+                userEmailElement.textContent = savedEmail;
+
+                // Optional: Update the Avatar initials based on the email
+                const avatarElement = document.querySelector('.user-avatar');
+                if (avatarElement) {
+                    avatarElement.textContent = savedEmail.charAt(0).toUpperCase();
+                }
+            } else {
+                // 3. Security: if someone tries to access dashboard without logging in
+                console.warn("Unauthorized access. Redirecting to login.");
+                window.location.href = 'auth.html';
+            }
+        }
+
+    </script>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // data-aos="fade-up"
+        // fade-up, fade-down, fade-left, fade-right, zoom-in,	slide-up, flip-left	
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

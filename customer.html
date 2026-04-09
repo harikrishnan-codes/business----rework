@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer | Strategic Portal</title>
+    <link rel="stylesheet" href="customer.css">
+    <link rel="stylesheet" href="./root.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+        <aside id="sidebar">
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <h3>Customer<span>Portal</span></h3>
+                    <div class="user-tag">Strategic Partner</div>
+                </div>
+            </div>
+
+            <nav class="aside-nav">
+                <ul>
+                    <li class="active">
+                        <a href="./404.html"><i class="material-icons">architecture</i><span>Project Roadmap</span></a>
+                    </li>
+                    <li>
+                        <a href="./404.html"><i class="material-icons">folder_shared</i><span>Resource Vault</span></a>
+                    </li>
+                    <li>
+                        <a href="./404.html"><i class="material-icons">receipt_long</i><span>Financials</span></a>
+                    </li>
+                    <li>
+                        <a href="./404.html"><i class="material-icons">support_agent</i><span>Direct Advisory</span></a>
+                    </li>
+
+                    <!-- <div class="user-meta">
+                        <p id="user-display-email">Loading...</p>
+                        <span>System Controller</span>
+                    </div> -->
+                </ul>
+            </nav>
+
+            <div class="aside-user">
+                <div class="user-card-inner">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-meta">
+                        <p id="user-display-email">John Doe</p>
+                        <span>Global Enterprise</span>
+                    </div>
+                    <button class="logout-icon" onclick="window.location.href='index.html'">
+                        <i class="material-icons">logout</i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="mobile-header">
+                <h3> <span>Client</span> Portal </h3>
+                <button id="hamburger" class="hamburger-btn"><i class="material-icons">menu</i></button>
+            </div>
+
+            <header class="content-header">
+                <div class="top-bar">
+                    <div class="user-greeting">
+                        <h2>Welcome, <span>Partner</span></h2>
+                        <p>Status: <strong>Infrastructure Scaling (Phase 3)</strong></p>
+                    </div>
+                    <div class="header-actions">
+                        <div class="icon-group">
+                            <div class="action-btn notification">
+                                <i class="material-icons">notifications</i>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="action-btn settings"><i class="material-icons">account_circle</i></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="stats-grid" data-aos="fade-up">
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-teal">speed</i>
+                            <span>Project Velocity</span>
+                        </div>
+                        <h4>84% <span>Complete</span></h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 84%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-orange">event_available</i>
+                            <span>Next Milestone</span>
+                        </div>
+                        <h4>Apr 24 <span>2026</span></h4>
+                        <div class="status-indicator">Audit Handover</div>
+                    </div>
+
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-teal">account_balance_wallet</i>
+                            <span>Investment</span>
+                        </div>
+                        <h4>$12.5k <span>Pending</span></h4>
+                        <div class="status-indicator">Invoice #TRX-882</div>
+                    </div>
+                </div>
+
+                <div class="glass-card table-section" data-aos="fade-up">
+                    <div class="table-header">
+                        <h3>Resource Vault</h3>
+                        <button class="btn btn-primary" onclick="window.location.href='./404.html'">Request Doc</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="modern-table">
+                            <thead>
+                                <tr>
+                                    <th>Document Name</th>
+                                    <th>Type</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Document Name">Infrastructure_Roadmap_v2.pdf</td>
+                                    <td data-label="Type"><span class="pill-status success">Technical</span></td>
+                                    <td data-label="Date">Oct 12, 2026</td>
+                                    <td data-label="Action"><i class="material-icons action-icon">download</i></td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Document Name">Security_Audit_Q2.xlsx</td>
+                                    <td data-label="Type"><span class="pill-status warning">Security</span></td>
+                                    <td data-label="Date">Oct 08, 2026</td>
+                                    <td data-label="Action"><i class="material-icons action-icon">download</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section class="roadmap-section" data-aos="fade-up">
+                <div class="glass-card">
+                    <div class="table-header">
+                        <h3>Project Roadmap</h3>
+                        <span class="pill-status success">Phase 3 Active</span>
+                    </div>
+
+                    <div class="roadmap-container">
+                        <div class="roadmap-step completed">
+                            <div class="step-icon"><i class="material-icons">check</i></div>
+                            <div class="step-content">
+                                <strong>Discovery Audit</strong>
+                                <span>Completed Mar 12</span>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-step completed">
+                            <div class="step-icon"><i class="material-icons">check</i></div>
+                            <div class="step-content">
+                                <strong>Architecture Design</strong>
+                                <span>Completed Mar 28</span>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-step active">
+                            <div class="step-icon"><i class="material-icons">architecture</i></div>
+                            <div class="step-content">
+                                <strong>Infrastructure Scaling</strong>
+                                <span>In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="roadmap-step pending">
+                            <div class="step-icon"><i class="material-icons">verified_user</i></div>
+                            <div class="step-content">
+                                <strong>Security Hardening</strong>
+                                <span>Pending Phase 3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+            <section class="support-hub-grid" data-aos="fade-up">
+                <div class="glass-card advisor-card">
+                    <div class="card-head">
+                        <i class="material-icons text-teal">support_agent</i>
+                        <span>Dedicated Advisor</span>
+                    </div>
+
+                    <div class="advisor-profile">
+                        <div class="avatar-wrap">
+                            <img src="https://ui-avatars.com/api/?name=Marcus+Vane&background=135448&color=fff"
+                                alt="Advisor">
+                            <div class="status-dot online"></div>
+                        </div>
+                        <div class="advisor-info">
+                            <h3>Marcus Vane</h3>
+                            <p>Senior Infrastructure Architect</p>
+                            <div class="availability">
+                                <i class="material-icons">schedule</i>
+                                <span>Available: 09:00 - 18:00 GMT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="advisor-actions">
+                        <button class="btn-primary-outline" onclick="window.location.href='./404.html'"><i
+                                class="material-icons">videocam</i> Book Call</button>
+                        <button class="btn btn-primary" onclick="window.location.href='./404.html'"><i
+                                class="material-icons">chat</i> Direct Message</button>
+                    </div>
+                </div>
+
+                <div class="glass-card ticket-card">
+                    <div class="card-head">
+                        <i class="material-icons text-orange">confirmation_number</i>
+                        <span>Active Requests</span>
+                    </div>
+
+                    <div class="ticket-list">
+                        <div class="ticket-item">
+                            <div class="ticket-meta">
+                                <strong>#REQ-442</strong>
+                                <span class="pill-status warning">In Review</span>
+                            </div>
+                            <p>DNS Configuration for Singapore Node</p>
+                            <small>Last update: 2 hours ago</small>
+                        </div>
+
+                        <div class="ticket-item">
+                            <div class="ticket-meta">
+                                <strong>#REQ-398</strong>
+                                <span class="pill-status success">Resolved</span>
+                            </div>
+                            <p>SSL Certificate installation for Staging</p>
+                            <small>Last update: yesterday</small>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="window.location.href='./404.html'">View All Requests
+                        &rarr;</button>
+                </div>
+            </section>
+
+
+
+
+        </main>
+    </div>
+
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 800, once: true });
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            hamburger.onclick = () => {
+                sidebar.classList.toggle('mobile-active');
+                overlay.classList.toggle('visible');
+            };
+
+            overlay.onclick = () => {
+                sidebar.classList.remove('mobile-active');
+                overlay.classList.remove('visible');
+            };
+        });
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get the email from the browser's memory
+            const loggedInEmail = localStorage.getItem('userEmail');
+            const emailDisplay = document.getElementById('user-display-email');
+
+            // 2. If the email exists, display it. If not, kick them back to login.
+            if (loggedInEmail) {
+                emailDisplay.textContent = loggedInEmail;
+
+                // Bonus: Update the avatar initials (e.g., "A" for alex@mail.com)
+                const avatar = document.querySelector('.user-avatar');
+                if (avatar) {
+                    avatar.textContent = loggedInEmail.charAt(0).toUpperCase();
+                }
+            } else {
+                // Security: Prevent accessing dashboard without login
+                window.location.href = 'auth.html';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

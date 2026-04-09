@@ -1,0 +1,283 @@
+:root {
+    --primary: #135448;
+    --accent: #FC551D;
+    --white: #ffffff;
+    --text-muted: #6b7280;
+    --radius: 16px;
+    --transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- ANIMATED BACKGROUND --- */
+.auth-bg-animation {
+    position: fixed;
+    inset: 0;
+    background: #0d2e28;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.moving-grid {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: rotate(15deg);
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        transform: rotate(15deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(15deg) translateY(50px);
+    }
+}
+
+.glow-orb {
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(80px);
+    animation: orbFloat 15s infinite alternate;
+}
+
+.orb-1 {
+    top: -10%;
+    right: -10%;
+}
+
+.orb-2 {
+    bottom: -10%;
+    left: -10%;
+    background: var(--primary);
+}
+
+@keyframes orbFloat {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* --- AUTH CARD --- */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+    background: rgba(19, 84, 72, 0.08);
+    color: var(--primary);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+/* --- ROLE SELECTOR --- */
+.role-selector {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.role-selector input {
+    display: none;
+}
+
+.role-box {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.role-selector input:checked+.role-box {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(252, 85, 29, 0.05);
+}
+
+/* --- FORM ELEMENTS --- */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i:first-child {
+    position: absolute;
+    left: 2px;
+    color: var(--text-muted);
+}
+
+.input-field input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border-radius: 12px;
+    border: 1.5px solid #eee;
+    background: #fdfdfd;
+    transition: var(--transition);
+}
+
+.eye-toggle {
+    position: absolute;
+    /* Lock to the right side */
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding: 5px;
+}
+
+.eye-toggle:hover {
+    color: var(--accent);
+}
+
+/* Ensure password headers are spaced well */
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.input-field input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(19, 84, 72, 0.1);
+    outline: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(252, 85, 29, 0.3);
+}
+
+/* --- 768px BREAKPOINT --- */
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 40px 25px;
+        margin: 20px;
+    }
+
+    .role-selector {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Ensure only the active form shows */
+.form-container {
+    display: none;
+    /* Hidden by default */
+}
+
+.form-container.active {
+    display: block;
+    /* Shown when JS adds the class */
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Make sure the card is visible above the background */
+.auth-wrapper {
+    position: relative;
+    z-index: 10;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+</head>
+
+<body>
+
+    <style>
+        :root {
+            --primary: #135448;
+            /* Your Forest Green */
+            --accent: #FC551D;
+            /* Your Orange */
+            --white: #ffffff;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: var(--primary);
+            font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
+        }
+
+        .error-container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        /* --- THE ANIMATION CANVAS --- */
+        #anim-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .content-box {
+            position: relative;
+            z-index: 20;
+            text-align: center;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 60px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            line-height: 1;
+            color: var(--white);
+            text-shadow: 0 0 20px rgba(252, 85, 29, 0.5);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        h2 span {
+            color: var(--accent);
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            max-width: 400px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .home-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Float Animation for the 404 Text */
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 5rem;
+            }
+
+            .content-box {
+                padding: 40px 20px;
+                width: 85%;
+            }
+        }
+    </style>
+
+
+    <canvas id="anim-canvas"></canvas>
+
+    <div class="error-container">
+        <div class="content-box">
+            <h1>404</h1>
+            <h2>Lost in <span>Space</span></h2>
+            <p>The page you are looking for has been moved or doesn't exist in our current strategy.</p>
+            <a href="index.html" class="home-btn">Go Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('anim-canvas');
+        const ctx = canvas.getContext('2d');
+        let dots = [];
+
+        function init() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            dots = [];
+            for (let i = 0; i < 60; i++) {
+                dots.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    r: Math.random() * 3 + 1,
+                    dx: (Math.random() - 0.5) * 1.5,
+                    dy: (Math.random() - 0.5) * 1.5
+                });
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            dots.forEach(dot => {
+                ctx.beginPath();
+                ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(252, 85, 29, 0.8)'; // Orange dots
+                ctx.fill();
+
+                // Move dots
+                dot.x += dot.dx;
+                dot.y += dot.dy;
+
+                // Bounce
+                if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+                if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+            });
+
+            // Draw connecting lines
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    let dist = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
+                    if (dist < 150) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 150})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(dots[i].x, dots[i].y);
+                        ctx.lineTo(dots[j].x, dots[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        draw();
+    </script>
+</body>
+
+</html>

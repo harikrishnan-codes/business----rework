@@ -1,0 +1,1074 @@
+/* --- Services Hero (Overlay Concept) --- */
+.services-hero-simple {
+    position: relative;
+    height: 70vh; /* Shorter than landing hero, better for inner pages */
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    overflow: hidden;
+}
+
+/* Layer 1: Background Image */
+.sh-image-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Layer 2: The Teal Overlay */
+.sh-overlay-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(19, 84, 72, 0.94) 0%, 
+        rgba(13, 61, 52, 0.88) 100%
+    );
+    z-index: 2;
+}
+
+/* Layer 3: Content */
+.sh-container {
+    position: relative;
+    z-index: 10;
+}
+
+.sh-content {
+    max-width: 750px;
+    color: var(--white);
+}
+
+.sh-content .badge-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.sh-content h1 {
+    font-size: 3.5rem;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.sh-content h1 span {
+    color: var(--accent-color); /* Your #FC551D Orange */
+}
+
+.sh-content p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.sh-actions {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 768px) {
+    .services-hero-simple {
+        height: auto;
+        padding: 120px 0 80px;
+        text-align: center;
+    }
+
+    .sh-content {
+        margin: 0 auto;
+    }
+
+    .sh-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .sh-content p {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sh-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+
+
+
+
+
+
+/* --- Core Features Redesign --- */
+.core-features {
+    padding: 120px 0;
+    background-color: var(--secondary-color); /* Off-white */
+    overflow: hidden;
+}
+
+.features-flex {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* --- The Modern Feature Card --- */
+.feature-card-v3 {
+    flex: 1;
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    border: 1px solid transparent;
+    overflow: hidden;
+}
+
+/* Border Trace Animation */
+.f-card-border {
+    position: absolute;
+    top: 0; left: 0; width: 0; height: 3px;
+    background: var(--accent-color);
+    transition: width 0.4s ease;
+}
+
+.feature-card-v3:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px var(--shadow);
+}
+
+.feature-card-v3:hover .f-card-border {
+    width: 100%; /* Line draws across the top */
+}
+
+.feature-card-v3:hover h3{
+    color: var(--accent-color);
+}
+
+/* Icon & Content */
+.f-icon-box {
+    width: 70px;
+    height: 70px;
+    background: rgba(19, 84, 72, 0.05);
+    color: var(--primary-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    transition: var(--transition);
+}
+
+.feature-card-v3:hover .f-icon-box {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: rotateY(180deg); /* Modern flip effect */
+}
+
+.feature-card-v3 h3 {
+    font-size: 1.5rem;
+    color: var(--text-header);
+    margin-bottom: 20px;
+}
+
+.feature-card-v3 p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.f-list {
+    list-style: none;
+    padding: 0;
+}
+
+.f-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.f-list i {
+    color: var(--accent-color);
+    font-size: 0.7rem;
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 992px) {
+    .features-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .core-features {
+        padding: 80px 0;
+    }
+
+    .feature-card-v3 {
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .f-icon-box {
+        margin: 0 auto 25px;
+    }
+
+    .f-list {
+        display: inline-block;
+        text-align: left;
+    }
+    
+    /* Reveal the border-trace by default on mobile */
+    .f-card-border {
+        width: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+
+
+
+
+
+/* --- Service Tiers Section --- */
+.service-tiers {
+    padding: 120px 0;
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    align-items: center;
+}
+
+/* --- The Tier Card --- */
+.tier-card {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 40px;
+    border: 1px solid rgba(19, 84, 72, 0.05);
+    box-shadow: 0 10px 40px var(--shadow);
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    position: relative;
+    text-align: center;
+}
+
+/* Featured Tier Styling */
+.tier-featured {
+    border-color: var(--accent-color);
+    background: var(--white);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* Hover Interaction: Depth-Focus */
+.tier-grid:hover .tier-card:not(:hover) {
+    opacity: 0.6;
+    transform: scale(0.95);
+    filter: blur(1px);
+}
+
+.tier-card:hover {
+    opacity: 1 !important;
+    transform: translateY(-20px) scale(1.08) !important;
+    filter: blur(0) !important;
+    border-color: var(--accent-color);
+    box-shadow: 0 40px 80px rgba(19, 84, 72, 0.15);
+}
+
+/* Inner Content */
+.tier-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(19, 84, 72, 0.05);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.tier-featured .tier-badge {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.tier-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.tier-card h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 40px;
+    text-align: left;
+}
+
+.tier-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.tier-list i {
+    color: var(--accent-color);
+}
+
+/* Button Styling */
+.btn-tier {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-tier:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 992px) {
+    .tier-grid { gap: 20px; padding: 0 20px; }
+}
+
+@media (max-width: 768px) {
+    .tier-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .tier-featured {
+        transform: scale(1);
+    }
+
+    .tier-card {
+        padding: 40px 25px;
+    }
+
+    /* Disable blur/scale logic on mobile for usability */
+    .tier-grid:hover .tier-card:not(:hover) {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+
+    .tier-card:hover {
+        transform: translateY(-10px) !important;
+    }
+}
+
+
+
+
+
+
+/* --- Methodology Section --- */
+.methodology {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+}
+
+/* --- THE MESH BACKGROUND --- */
+/* This creates a high-end moving color look using only CSS */
+.mesh-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(19, 84, 72, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(252, 85, 29, 0.05) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(19, 84, 72, 0.03) 0px, transparent 50%);
+    z-index: 1;
+}
+
+.methodology .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Process Layout --- */
+.process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--white);
+    transition: var(--transition);
+    /* Pure CSS Entrance */
+    animation: revealIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.step-item:nth-child(2) { animation-delay: 0.2s; }
+.step-item:nth-child(3) { animation-delay: 0.4s; }
+
+.step-item:hover {
+    transform: translateX(15px);
+    background: var(--white);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px var(--shadow);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    opacity: 0.15;
+    transition: var(--transition);
+}
+
+.step-item:hover .step-number {
+    opacity: 1;
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.step-item:hover .step-content h3{
+    color: var(--accent-color);
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    margin-bottom: 0;
+    color: var(--text-muted);
+}
+
+/* --- Entrance Animation --- */
+@keyframes revealIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 768px) {
+    .methodology {
+        padding: 80px 0;
+    }
+
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .step-item:hover {
+        transform: translateY(-10px); /* Vertical lift on mobile */
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+
+
+
+/* --- Final Stats Section Styles --- */
+.stat-highlights {
+    padding: 120px 0;
+    background-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-highlights .container .section-header span{
+    color: var(--accent-color);
+}
+
+.stat-highlights .container .section-header h2,
+.stat-highlights .container .section-header p{
+    color: var(--bg-surface);
+}
+
+/* Header Inversion */
+.sh-light h2 { color: var(--white); text-align: center; }
+.sh-light p { color: rgba(255, 255, 255, 0.7); text-align: center; margin: 0 auto 60px; }
+.sh-light .badge-invert {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Card Design */
+.stat-card-v2 {
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
+}
+
+.stat-card-v2:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--accent-color);
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    color: var(--white);
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.stat-number span {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.stat-card-v2 p {
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+.stat-line {
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    margin: 0 auto;
+    transition: width 0.4s ease;
+}
+
+.stat-card-v2:hover .stat-line { width: 80px; }
+
+/* Responsive Logic */
+@media (max-width: 992px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .stat-highlights { padding: 80px 0; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat-number { font-size: 3rem; }
+}
+
+
+
+
+
+
+
+
+
+/* --- Industry Impact Showcase --- */
+.industry-impact {
+    padding: 120px 0;
+    background-color: var(--secondary-color); /* Your Off-White */
+    overflow: hidden;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 40px;
+}
+
+/* --- The Shutter Card --- */
+.impact-card {
+    position: relative;
+    height: 400px;
+    border-radius: 24px;
+    background-color: var(--primary-color);
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 10px 30px var(--shadow);
+    /* Entrance Animation */
+    animation: entranceFadeSlide 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered Entrance */
+.impact-card:nth-child(1) { animation-delay: 0.1s; }
+.impact-card:nth-child(2) { animation-delay: 0.3s; }
+.impact-card:nth-child(3) { animation-delay: 0.5s; }
+
+/* The Hover Effect - Card Scale */
+.impact-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(19, 84, 72, 0.15);
+}
+
+/* --- The Shutter (CSS Overlay) --- */
+.shutter-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(19, 84, 72, 0.6) 0%, /* Transparent Green top */
+        rgba(13, 61, 52, 0.95) 80% /* Dark Green bottom */
+    );
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: translateY(0); /* Default State */
+}
+
+/* On hover, the shutter "slides up" slightly to reveal more image */
+.impact-card:hover .shutter-overlay {
+    transform: translateY(-20%);
+}
+
+/* --- Card Content --- */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    color: var(--white);
+    transition: transform 0.5s ease;
+}
+
+.card-category {
+    display: inline-block;
+    color: var(--accent-color); /* Your Orange */
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    color: var(--white);
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+/* Hidden Description - Reveals on Hover */
+.card-desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin 0.5s ease;
+}
+
+.btn-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 25px;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.1s, color 0.3s ease;
+}
+
+/* --- The Hover Reveal Logic --- */
+.impact-card:hover .card-desc {
+    max-height: 100px; /* Expands to fit content */
+    opacity: 1;
+    margin-bottom: 25px;
+}
+
+.impact-card:hover .btn-text {
+    opacity: 1;
+}
+
+.btn-text:hover {
+    color: var(--accent-color);
+}
+
+/* --- Animations --- */
+@keyframes entranceFadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 992px) {
+    .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .industry-impact {
+        padding: 80px 0;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .impact-card {
+        height: 350px;
+    }
+
+    .card-content {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .impact-card:hover .card-desc {
+        max-height: 150px; /* Allow more space on mobile if needed */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* --- Testimonials Spotlight Section --- */
+.testimonials-spotlight {
+    padding: 120px 0;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.spotlight-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* --- The Spotlight Animation Logic --- */
+/* When the group is hovered, fade all cards */
+.spotlight-group:hover .testi-card {
+    opacity: 0.4;
+    filter: blur(2px) grayscale(100%);
+    transform: scale(0.95);
+}
+
+/* Then, make the SPECIFIC hovered card bright and sharp */
+.spotlight-group .testi-card:hover {
+    opacity: 1;
+    filter: blur(0) grayscale(0);
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 30px 60px rgba(19, 84, 72, 0.12);
+    z-index: 10;
+}
+
+/* --- Card Styling --- */
+.testi-card {
+    background: var(--bg-surface);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid transparent;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+}
+
+.testi-quote {
+    color: var(--accent-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    opacity: 0.3;
+}
+
+.testi-text {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-style: italic;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.testi-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testi-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--white);
+}
+
+.author-info h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.author-info span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 992px) {
+    .spotlight-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-spotlight {
+        padding: 80px 0;
+    }
+
+    .spotlight-group {
+        grid-template-columns: 1fr;
+    }
+
+    /* Disable spotlight logic on mobile for better accessibility */
+    .spotlight-group:hover .testi-card {
+        opacity: 1;
+        filter: none;
+        transform: none;
+    }
+
+    .testi-card {
+        margin: 0 10px;
+    }
+
+    .testi-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+
+
+
+
+/* --- Reveal CTA Section --- */
+.reveal-cta {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cta-reveal-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 350px; /* Fixed height to prevent page jumping during reveal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* --- Initial State Styling --- */
+.cta-initial-state {
+    text-align: center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.cta-initial-state h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+.hover-indicator {
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+    animation: bounceSoft 2s infinite;
+}
+
+/* --- Reveal State Styling (Hidden by Default) --- */
+.cta-reveal-state {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-dark); /* Darker green for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(252, 85, 29, 0.3);
+    
+    /* The Magic: Hidden state */
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.cta-reveal-state h2 { color: var(--white); font-size: 2.8rem; }
+.cta-reveal-state h2 span { color: var(--accent-color); }
+.cta-reveal-state p { color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; max-width: 500px; }
+
+/* --- THE HOVER ACTION --- */
+.cta-reveal-wrapper:hover .cta-initial-state {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+}
+
+.cta-reveal-wrapper:hover .cta-reveal-state {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 3;
+}
+
+/* --- Animations --- */
+@keyframes bounceSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 768px) {
+    .cta-reveal-wrapper {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .cta-initial-state h2 { font-size: 1.8rem; }
+    .cta-reveal-state h2 { font-size: 1.8rem; }
+
+    /* On mobile, we keep the reveal state visible or use a click trigger */
+    .cta-initial-state {
+        display: none; /* Hide initial state on mobile for better UX */
+    }
+    .cta-reveal-state {
+        position: relative;
+        opacity: 1;
+        transform: scale(1);
+        background: transparent;
+        border: none;
+    }
+}

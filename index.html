@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="./assets/orange.webp" alt="logo" width="150px">
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="auth.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <div class="close-btn" id="closeBtn">&times;</div>
+            <ul class="mobile-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="auth.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg-slider">
+                <div class="bg-slide active" style="background-image: url('./assets/img\ 1.webp');">
+                </div>
+                <div class="bg-slide" style="background-image: url('./assets/img\ 2.webp');">
+                </div>
+                <div class="bg-slide" style="background-image: url('./assets/img\ 3.webp');">
+                </div>
+                <div class="bg-slide" style="background-image: url('./assets/img\ 4.webp');">
+                </div>
+            </div>
+
+            <canvas id="waveCanvas"></canvas>
+
+            <div class="wave-overlay"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Innovation Meets Strategy</span>
+                    <div id="hero-slider">
+                        <div class="slide active">
+                            <h1>Elevate Your Business With <span>Premium</span> Solutions</h1>
+                            <p>We combine deep industry expertise with cutting-edge technology to transform your digital
+                                presence.</p>
+                        </div>
+                        <div class="slide">
+                            <h1>Strategic Growth For <span>Modern</span> Brands</h1>
+                            <p>Data-driven methodologies designed to scale your operations and dominate your market
+                                niche.</p>
+                        </div>
+                    </div>
+                    <div class="hero-btns">
+                        <a href="./404.html" class="btn btn-primary">Start Your Project</a>
+                        <a href="./404.html" class="btn btn-secondary">Our Services</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-box">
+                        <div class="stat-card card-1"><span class="icon">📈</span>
+                            <div><strong>124%</strong>
+                                <p>Growth</p>
+                            </div>
+                        </div>
+                        <div class="stat-card card-2"><span class="icon">💎</span>
+                            <div><strong>Premium</strong>
+                                <p>Quality</p>
+                            </div>
+                        </div>
+                        <div class="main-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <div class="partner-marquee">
+            <div class="marquee-content">
+                <span class="company-name">NEXUS CORP</span>
+                <span class="company-name">STRATOS GLOBAL</span>
+                <span class="company-name">AVANT-GARDE</span>
+                <span class="company-name">SILICON VENTURES</span>
+                <span class="company-name">THE ARCHITECTS</span>
+                <span class="company-name">PRIME LOGISTICS</span>
+
+                <span class="company-name">NEXUS CORP</span>
+                <span class="company-name">STRATOS GLOBAL</span>
+                <span class="company-name">AVANT-GARDE</span>
+                <span class="company-name">SILICON VENTURES</span>
+                <span class="company-name">THE ARCHITECTS</span>
+                <span class="company-name">PRIME LOGISTICS</span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-image-wrapper">
+                    <div class="image-accent"></div>
+                    <div class="main-image">
+                        <img src="./assets/img 5.webp"
+                            alt="Our Team">
+                    </div>
+                    <div class="experience-badge">
+                        <span class="num">12+</span>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <span class="badge">About Our Agency</span>
+                    <h2>We Bridge the Gap Between <span>Strategy</span> and Digital Excellence</h2>
+                    <p class="lead">Since 2014, we have helped over 500+ companies redefine their digital footprint
+                        through high-end design and scalable technology.</p>
+
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="dot"></div>
+                            <p>Tailored Digital Solutions</p>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="dot"></div>
+                            <p>Performance Driven Design</p>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="dot"></div>
+                            <p>Expert Technical Support</p>
+                        </div>
+                    </div>
+
+                    <a href="./404.html" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="business-gallery">
+            <div class="container">
+                <div class="section-header white-text">
+                    <span class="badge badge-invert">Our Operations</span>
+                    <h2>Inside Our <span>Digital</span> Ecosystem</h2>
+                    <p>A visual journey through the infrastructure and environments where we build the future of
+                        business.</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./assets/img 6.webp"
+                                alt="Strategy Room">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <span>01 / Strategy</span>
+                                    <h3>Strategic Analysis</h3>
+                                    <p>Data-driven decision making at the core of every project roadmap.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./assets/img 7.webp"
+                                alt="Architecture">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <span>02 / Infrastructure</span>
+                                    <h3>Cloud Architecture</h3>
+                                    <p>Building secure, scalable foundations for global enterprise systems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./assets/img 8.webp"
+                                alt="Design Lab">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <span>03 / Creative</span>
+                                    <h3>UI/UX Innovation</h3>
+                                    <p>Where high-end aesthetics meet intuitive user behavior patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="./assets/img 9.webp"
+                                alt="Tech Hub">
+                            <div class="gallery-overlay">
+                                <div class="overlay-content">
+                                    <span>04 / Execution</span>
+                                    <h3>Agile Development</h3>
+                                    <p>Rapid deployment cycles using the latest industry-standard stacks.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Our Method</span>
+                    <h2>How We Transform <span>Ideas</span></h2>
+                </div>
+
+                <div class="process-wrapper">
+                    <div class="process-line">
+                        <div class="line-progress" id="line-progress"></div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">01</div>
+                        <div class="process-info">
+                            <h3>Discovery & Strategy</h3>
+                            <p>We deep-dive into your business model, identifying pain points and mapping out a
+                                high-level strategic roadmap.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">02</div>
+                        <div class="process-info">
+                            <h3>Design & Prototype</h3>
+                            <p>Our designers craft high-fidelity UIs that align with your brand, focusing on premium
+                                aesthetics and user flow.</p>
+                        </div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">03</div>
+                        <div class="process-info">
+                            <h3>Development & Launch</h3>
+                            <p>Using clean, scalable code, we bring the design to life and handle the seamless
+                                deployment to your live environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="why-us-featured">
+            <div class="why-us-image-bg"></div>
+            <div class="why-us-overlay"></div>
+
+            <div class="container relative-z">
+                <div class="section-header dark-bg">
+                    <span class="badge">Our Impact</span>
+                    <h2>Why Partners <span>Choose</span> Our Vision</h2>
+                    <p>We don't just build websites; we engineer digital growth systems that prioritize ROI and brand
+                        authority.</p>
+                </div>
+
+                <div class="stats-featured-grid">
+                    <div class="stat-card-premium">
+                        <h3 class="counter" data-target="150">0</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card-premium">
+                        <h3 class="counter" data-target="98">0</h3>
+                        <p>Satisfaction Rate %</p>
+                    </div>
+                    <div class="stat-card-premium">
+                        <h3 class="counter" data-target="25">0</h3>
+                        <p>Industry Awards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Pricing Plans</span>
+                    <h2>Flexible <span>Investment</span> for Every Stage</h2>
+
+                    <div class="pricing-switch">
+                        <span class="label">Monthly</span>
+                        <div class="toggle-btn" id="price-toggle">
+                            <div class="inner-circle"></div>
+                        </div>
+                        <span class="label">Yearly <small>(Save 20%)</small></span>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="plan-type">Startup</div>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <h3 class="amount" data-monthly="49" data-yearly="39">49</h3>
+                            <span class="period">/mo</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <div class="dot"></div> UI/UX Design
+                            </li>
+                            <li>
+                                <div class="dot"></div> 5 Internal Pages
+                            </li>
+                            <li>
+                                <div class="dot"></div> Basic SEO
+                            </li>
+                        </ul>
+                        <a href="./404.html" class="btn btn-outline">Choose Startup</a>
+                    </div>
+
+                    <div class="pricing-card featured">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="plan-type">Business</div>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <h3 class="amount" data-monthly="99" data-yearly="79">99</h3>
+                            <span class="period">/mo</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <div class="dot"></div> Advanced UI/UX
+                            </li>
+                            <li>
+                                <div class="dot"></div> 15 Internal Pages
+                            </li>
+                            <li>
+                                <div class="dot"></div> Advanced SEO & Marketing
+                            </li>
+                            <li>
+                                <div class="dot"></div> 24/7 Priority Support
+                            </li>
+                        </ul>
+                        <a href="./404.html" class="btn btn-primary">Start Business</a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="plan-type">Enterprise</div>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <h3 class="amount" data-monthly="199" data-yearly="159">199</h3>
+                            <span class="period">/mo</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>
+                                <div class="dot"></div> Custom Solutions
+                            </li>
+                            <li>
+                                <div class="dot"></div> Unlimited Pages
+                            </li>
+                            <li>
+                                <div class="dot"></div> Full Infrastructure
+                            </li>
+                        </ul>
+                        <a href="./404.html" class="btn btn-outline">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="industry-insights">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <span class="badge">Intelligence</span>
+                    <h2>Strategic <span>Insights</span> & Briefs</h2>
+                    <p>Analyzing the intersection of global finance, digital infrastructure, and architectural
+                        innovation.</p>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="insight-card card-main" data-aos="fade-right">
+                        <div class="insight-img"
+                            style="background-image: url('./assets/img\ 11.webp');">
+                        </div>
+                        <div class="insight-overlay">
+                            <span class="category">Infrastructure</span>
+                            <h3>The 2026 Shift: Decentralized Enterprise Architectures</h3>
+                            <p>Why centralized legacy systems are becoming the primary bottleneck for global scaling...
+                            </p>
+                            <a href="./404.html" class="read-more">Access Full Brief <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="insight-sidebar">
+                        <div class="insight-card card-sub" data-aos="fade-left">
+                            <div class="insight-overlay-sm">
+                                <span class="category">Security</span>
+                                <h4>Risk Mitigation in AI-Driven Hubs</h4>
+                                <a href="./404.html" class="link-minimal">Read Case Study &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="insight-card card-sub" data-aos="fade-left" data-aos-delay="100">
+                            <div class="insight-overlay-sm">
+                                <span class="category">Growth</span>
+                                <h4>Market Entry: The APAC Strategy</h4>
+                                <a href="./404.html" class="link-minimal">Read Case Study &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="testimonials-high-fidelity v4">
+            <div class="test-image-bg"></div>
+            <div class="test-brand-overlay"></div>
+
+            <div class="container relative-z">
+                <div class="section-header white-text">
+                    <span class="badge badge-invert">Wall of Love</span>
+                    <h2>Proven <span>Results</span>, Direct From Partners</h2>
+                </div>
+
+                <div class="test-v4-card-glass">
+                    <div class="avatar-stack-v4" id="avatar-selector">
+                        <div class="avatar-item-v4 active" data-index="0">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80"
+                                alt="Client 1">
+                        </div>
+                        <div class="avatar-item-v4" data-index="1">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80"
+                                alt="Client 2">
+                        </div>
+                        <div class="avatar-item-v4" data-index="2">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80"
+                                alt="Client 3">
+                        </div>
+                        <div class="avatar-item-v4" data-index="3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80"
+                                alt="Client 4">
+                        </div>
+                        <div class="add-btn-v4">+</div>
+                    </div>
+
+                    <div class="test-text-engine" id="text-engine">
+                        <div class="text-block active">
+                            <div class="stars">★★★★★</div>
+                            <p class="main-quote-v4">"Our conversions doubled in 90 days. Their deep strategic insights
+                                and world-class design are truly unparalleled."</p>
+                            <div class="user-meta-v4">
+                                <h4>Alex Rivera</h4>
+                                <p>CEO, TechFlow Solution</p>
+                            </div>
+                        </div>
+
+                        <div class="text-block">
+                            <div class="stars">★★★★★</div>
+                            <p class="main-quote-v4">"Professional, responsive, and skilled. They transformed our
+                                digital footprint from static to dynamic."</p>
+                            <div class="user-meta-v4">
+                                <h4>Sarah Jenkins</h4>
+                                <p>Dir. Marketing, Elevate</p>
+                            </div>
+                        </div>
+
+                        <div class="text-block">
+                            <div class="stars">★★★★★</div>
+                            <p class="main-quote-v4">"They seamless API integrations saved us weeks of development time.
+                                Highly technical and incredibly innovative."</p>
+                            <div class="user-meta-v4">
+                                <h4>Marcus Wright</h4>
+                                <p>CTO, Quantum Systems</p>
+                            </div>
+                        </div>
+
+                        <div class="text-block">
+                            <div class="stars">★★★★★</div>
+                            <p class="main-quote-v4">"The automated logistics system they implemented reduced our
+                                operational costs by 22% overnight. Highly recommended."</p>
+                            <div class="user-meta-v4">
+                                <h4>James Chen</h4>
+                                <p>Operations Manager, Global Logistics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge">Common Inquiries</span>
+                    <h2>Frequently Asked <span>Questions</span></h2>
+                    <p>Everything you need to know about our process, pricing, and project delivery.</p>
+                </div>
+
+                <div class="faq-wrapper">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How long does a typical project take?</h3>
+                            <div class="faq-icon">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most mid-sized projects range from 4 to 8 weeks. This includes the full discovery,
+                                design, and development phases. We prioritize quality over speed to ensure a premium
+                                result.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer post-launch support?</h3>
+                            <div class="faq-icon">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. Every project includes 30 days of complimentary high-priority support. We
+                                also offer monthly maintenance retainers to keep your platform updated and secure.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can we integrate third-party APIs?</h3>
+                            <div class="faq-icon">
+                                <span class="line"></span>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our development team specializes in seamless API integrations, ranging from payment
+                                gateways (Stripe, PayPal) to CRM systems like Salesforce and HubSpot.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-glass-card">
+                    <div class="cta-content">
+                        <span class="badge">Ready to Scale?</span>
+                        <h2>Let’s Build Something <span>Extraordinary</span> Together</h2>
+                        <p>Join 500+ businesses already using our premium digital strategies to dominate their markets.
+                        </p>
+
+                        <div class="cta-actions">
+                            <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+                            <a href="mailto:office@yourbrand.com" class="cta-link">office@yourbrand.com</a>
+                        </div>
+                    </div>
+
+                    <div class="cta-shape shape-1"></div>
+                    <div class="cta-shape shape-2"></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-grid-bg"></div>
+
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="index.html" class="footer-logo">
+                    <img src="./assets/orange.webp" alt="logo" width="150px">
+                </a>
+                <p>Elevating digital experiences through strategic design and premium technology since 2014.</p>
+                <div class="social-links">
+                    <a href="./404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="./404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="./404.html" aria-label="Instagram"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="auth.html">Sign Up</a></li>
+
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Agency</h4>
+                <ul class="footer-links">
+                    <li><a href="./404.html">Our Story</a></li>
+                    <li><a href="./404.html">The Method</a></li>
+                    <li><a href="./404.html">Pricing</a></li>
+                    <li><a href="./404.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter-col">
+                <h4>Stay Updated</h4>
+                <p>Receive premium insights directly in your inbox.</p>
+                <form class="footer-form" action="./404.html" method="GET">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn-send">&rarr;</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="bottom-flex">
+                    <p>&copy; 2026 Brand Agency. All Rights Reserved.</p>
+                    <div class="legal-links">
+                        <a href="./404.html">Privacy Policy</a>
+                        <a href="./404.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // data-aos="fade-up"
+        // fade-up, fade-down, fade-left, fade-right, zoom-in,	slide-up, flip-left	
+
+    </script>
+
+</body>
+
+</html>

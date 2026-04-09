@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
+:root {
+    /* --- Brand Colors --- */
+    --primary-color: #135448;
+    /* Deep Forest Green */
+    --secondary-color: #F2F2F2;
+    /* Off-White */
+    --accent-color: #FC551D;
+    /* Vibrant Orange (CTA) */
+    --button-color: #FC551D;
+    /* Alias for CTA */
+
+    /* --- Derived States & Accents --- */
+    --primary-dark: #0d3d34;
+    --primary-light: #1c7a69;
+    --button-hover: #e04410;
+    --bg-surface: #EBEBEB;
+    /* Slightly darker than secondary */
+    --white: #FFFFFF;
+
+    /* --- Typography Colors --- */
+    --text-header: #135448;
+    /* Headings use the brand green for a premium look */
+    --text-main: #1A1A1A;
+    /* Main body text */
+    --text-muted: #595959;
+    /* Sub-text */
+    --text-light: #ffffff;
+    /* Text on dark backgrounds */
+
+    /* --- Utility Colors --- */
+    --success: #28a745;
+    --error: #dc3545;
+    --shadow: rgba(19, 84, 72, 0.1);
+    --btn-shadow: rgba(252, 85, 29, 0.3);
+
+
+
+
+
+    /* --- Typography --- */
+
+    --fs-h1: 2.5rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.25rem;
+    --fs-h5: 1.125rem;
+    --fs-h6: 1rem;
+
+    --fs-p: 1rem;
+    --fs-p-sm: 0.875rem;
+
+    --lh-heading: 1.2;
+    --lh-body: 1.6;
+
+
+    /* --- Layout & Effects --- */
+    --radius: 8px;
+    --transition: all 0.3s ease;
+
+
+}
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary-color);
+    /* Using your off-white for the body */
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: var(--lh-body);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+/* --- Typography Styles --- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-header);
+    font-weight: 700;
+    line-height: var(--lh-heading);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+p {
+    font-size: var(--fs-p);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+/* Base Button Style */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    text-decoration: none;
+    line-height: 1;
+}
+
+/* Primary Button (Using your #FC551D) */
+.btn-primary {
+    background-color: var(--button-color);
+    color: var(--text-light);
+    box-shadow: 0 4px 14px var(--btn-shadow);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(252, 85, 29, 0.4);
+}
+
+/* Secondary Button (Brand Outline) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Subtle / Neutral Button */
+.btn-outline {
+    background-color: var(--bg-surface);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: #e5e5e5;
+}
+
+
+
+
+
+
+
+
+
+/* --- Section Header Styles --- */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 80px auto; /* Centered with a large bottom gap to the grid */
+    padding: 0 20px;
+}
+
+/* Reusing your Premium Badge style */
+.section-header .badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: rgba(19, 84, 72, 0.08); /* Transparent version of Forest Green */
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: var(--fs-h2); /* Scaled to your 2rem variable */
+    color: var(--text-header);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.section-header h2 span {
+    color: var(--accent-color); /* The #FC551D Orange */
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle underline effect for the "Growth" span */
+.section-header h2 span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(252, 85, 29, 0.15); /* Very light orange highlight */
+    z-index: -1;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* --- Responsive 768px --- */
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 50px; /* Tighter spacing on mobile */
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem; /* Slightly smaller for mobile screens */
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business</title>
+    <link rel="icon" href="./assets/bg remove.webp">
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="./root.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <section class="admin-layout">
+        <aside id="sidebar">
+            <div class="aside-brand">
+                <div class="brand-inner">
+                    <h3> <span>Admin</span> Core </h3>
+                    <div class="user-tag admin">Executive Admin</div>
+                </div>
+            </div>
+
+            <nav class="aside-nav">
+                <ul>
+                    <li class="active">
+                        <a href="./404.html">
+                            <i class="material-icons">dashboard_customize</i>
+                            <span>Intelligence</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./404.html" >
+                            <i class="material-icons">account_tree</i>
+                            <span>Infrastructure</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./404.html">
+                            <i class="material-icons">public</i>
+                            <span>Global Nodes</span>
+                            <span class="nav-badge">Live</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./404.html">
+                            <i class="material-icons">verified_user</i>
+                            <span>Security Vault</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="aside-user">
+                <div class="user-card-inner">
+                    <div class="user-avatar admin-glow">AV</div>
+                    <div class="user-meta">
+                        <p id="user-display-email">Alex Vance</p>
+                        <span>Chief Architect</span>
+                    </div>
+                    <button class="logout-icon" onclick="window.location.href='index.html'">
+                        <i class="material-icons">logout</i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="mobile-header">
+                <h3>Corp<span>Core</span></h3>
+                <button id="hamburger" class="hamburger-btn"><i class="material-icons">menu</i></button>
+            </div>
+
+            <header class="content-header">
+                <div class="top-bar">
+                    <div class="user-greeting">
+                        <h2>Systems <span>Operational</span></h2>
+                        <p>Global infrastructure health: <strong>99.98%</strong></p>
+                    </div>
+
+                    <div class="header-actions">
+                        <div class="search-wrapper">
+                            <i class="material-icons">search</i>
+                            <input type="text" placeholder="Search Global Intelligence...">
+                        </div>
+                        <div class="icon-group">
+                            <div class="action-btn notification">
+                                <i class="material-icons">notifications_active</i>
+                                <span class="dot"></span>
+                            </div>
+                            <div class="action-btn settings"><i class="material-icons">tune</i></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body" id="main-view">
+                <div class="stats-grid" data-aos="fade-up">
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-orange">trending_up</i>
+                            <span>Revenue Velocity</span>
+                        </div>
+                        <h4>$4.2M <span>USD</span></h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-teal">hub</i>
+                            <span>Active Nodes</span>
+                        </div>
+                        <h4>1,284 <span>Live</span></h4>
+                        <div class="status-indicator">All Systems Stable</div>
+                    </div>
+
+                    <div class="glass-card stat-item">
+                        <div class="card-head">
+                            <i class="material-icons text-orange">security</i>
+                            <span>Threat Blocks</span>
+                        </div>
+                        <h4>12k <span>24h</span></h4>
+                        <div class="status-indicator">Zero Breaches</div>
+                    </div>
+                </div>
+
+                <div class="glass-card table-section" data-aos="fade-up" data-aos-delay="100">
+                    <div class="table-header">
+                        <h3>Critical Operations Log</h3>
+                        <button class="btn btn-primary" onclick="window.location.href='./404.html'">View Full Audit</button>
+                    </div>
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Node Origin</th>
+                                <th>Volume</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#TRX-9921</td>
+                                <td>London, UK</td>
+                                <td>$124,000</td>
+                                <td><span class="pill-status success">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-8845</td>
+                                <td>Singapore</td>
+                                <td>$89,200</td>
+                                <td><span class="pill-status warning">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <section class="infrastructure-grid" data-aos="fade-up">
+                    <div class="glass-card map-container">
+                        <div class="card-header-flex">
+                            <h3>Global Node Distribution</h3>
+                            <span class="live-indicator"><span class="pulse"></span> Live Map</span>
+                        </div>
+                        <div class="map-placeholder">
+                            <img src="https://images.unsplash.com/photo-1526770141917-06df774c8330?auto=format&fit=crop&q=80"
+                                alt="World Map">
+                            <div class="map-pin london"></div>
+                            <div class="map-pin dubai"></div>
+                            <div class="map-pin singapore"></div>
+                        </div>
+                    </div>
+
+                    <div class="health-monitoring">
+                        <div class="glass-card health-card">
+                            <div class="gauge-info">
+                                <span>CPU Load</span>
+                                <strong>42%</strong>
+                            </div>
+                            <div class="gauge-bar">
+                                <div class="fill green" style="width: 42%"></div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card health-card">
+                            <div class="gauge-info">
+                                <span>Memory Usage</span>
+                                <strong>68%</strong>
+                            </div>
+                            <div class="gauge-bar">
+                                <div class="fill orange" style="width: 68%"></div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card health-card">
+                            <div class="gauge-info">
+                                <span>Network Latency</span>
+                                <strong>12ms</strong>
+                            </div>
+                            <div class="gauge-bar">
+                                <div class="fill green" style="width: 15%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
+
+                <section class="team-activity-grid" data-aos="fade-up">
+                    <div class="glass-card team-card-wrap">
+                        <div class="card-header-flex">
+                            <h3>Executive Team</h3>
+                            <button class="btn-icon-plus" onclick="window.location.href='./404.html'"><i class="material-icons">add</i></button>
+                        </div>
+
+                        <div class="team-list">
+                            <div class="team-item">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=135448&color=fff"
+                                    alt="User">
+                                <div class="team-info">
+                                    <strong>Sarah Chen</strong>
+                                    <span>Lead Architect</span>
+                                </div>
+                                <div class="team-status online"></div>
+                            </div>
+
+                            <div class="team-item">
+                                <img src="https://ui-avatars.com/api/?name=Marcus+Vane&background=FC551D&color=fff"
+                                    alt="User">
+                                <div class="team-info">
+                                    <strong>Marcus Vane</strong>
+                                    <span>Systems Analyst</span>
+                                </div>
+                                <div class="team-status busy"></div>
+                            </div>
+
+                            <div class="team-item">
+                                <img src="https://ui-avatars.com/api/?name=Elena+Rodriguez&background=135448&color=fff"
+                                    alt="User">
+                                <div class="team-info">
+                                    <strong>Elena Rodriguez</strong>
+                                    <span>Global Operations</span>
+                                </div>
+                                <div class="team-status online"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card activity-feed">
+                        <div class="card-header-flex">
+                            <h3>Recent Activity</h3>
+                            <i class="material-icons text-muted">history</i>
+                        </div>
+
+                        <div class="feed-items">
+                            <div class="feed-entry">
+                                <div class="entry-line"></div>
+                                <div class="entry-dot"></div>
+                                <div class="entry-content">
+                                    <p><strong>System</strong> deployed <span>Node_v2.4</span> to Singapore Hub</p>
+                                    <small>14 minutes ago</small>
+                                </div>
+                            </div>
+
+                            <div class="feed-entry">
+                                <div class="entry-line"></div>
+                                <div class="entry-dot"></div>
+                                <div class="entry-content">
+                                    <p><strong>Admin</strong> authorized <span>Global SSL</span> renewal</p>
+                                    <small>2 hours ago</small>
+                                </div>
+                            </div>
+
+                            <div class="feed-entry">
+                                <div class="entry-dot"></div>
+                                <div class="entry-content">
+                                    <p><strong>Security</strong> blocked <span>1.2k</span> brute-force attempts</p>
+                                    <small>5 hours ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </section>
+
+    <div id="sidebar-overlay" class="overlay"></div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init();
+
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebar-overlay');
+
+            hamburger.onclick = () => {
+                sidebar.classList.toggle('mobile-active');
+                overlay.classList.toggle('visible');
+            };
+
+            overlay.onclick = () => {
+                sidebar.classList.remove('mobile-active');
+                overlay.classList.remove('visible');
+            };
+        });
+
+        function logout() {
+            window.location.href = 'auth.html';
+        }
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // 1. Get the email from the browser's memory
+    const loggedInEmail = localStorage.getItem('userEmail');
+    const emailDisplay = document.getElementById('user-display-email');
+
+    // 2. If the email exists, display it. If not, kick them back to login.
+    if (loggedInEmail) {
+        emailDisplay.textContent = loggedInEmail;
+        
+        // Bonus: Update the avatar initials (e.g., "A" for alex@mail.com)
+        const avatar = document.querySelector('.user-avatar');
+        if (avatar) {
+            avatar.textContent = loggedInEmail.charAt(0).toUpperCase();
+        }
+    } else {
+        // Security: Prevent accessing dashboard without login
+        window.location.href = 'auth.html';
+    }
+});
+    </script>
+</body>
+
+</html>
