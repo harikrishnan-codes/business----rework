@@ -5,20 +5,17 @@ const closeBtn = document.getElementById('closeBtn');
 const mobileNav = document.getElementById('mobileNav');
 const mobileLinks = document.querySelectorAll('.mobile-links a');
 
-// Open Menu
-hamburger.addEventListener('click', () => {
+ hamburger.addEventListener('click', () => {
     mobileNav.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevents scrolling when menu is open
+    document.body.style.overflow = 'hidden';  
 });
 
-// Close Menu
-closeBtn.addEventListener('click', () => {
+ closeBtn.addEventListener('click', () => {
     mobileNav.classList.remove('active');
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
+    document.body.style.overflow = 'auto';  
 });
 
-// Close menu when a link is clicked
-mobileLinks.forEach(link => {
+ mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileNav.classList.remove('active');
         document.body.style.overflow = 'auto';
@@ -36,35 +33,27 @@ mobileLinks.forEach(link => {
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. TEXT SLIDER LOGIC (Auto Swap) ---
-    const textSlides = document.querySelectorAll('.slide');
+     const textSlides = document.querySelectorAll('.slide');
     let currentTextIndex = 0;
 
     function rotateText() {
-        // Find the current active slide
-        const activeSlide = textSlides[currentTextIndex];
+         const activeSlide = textSlides[currentTextIndex];
         
-        // 1. Trigger the Exit Animation (CSS handles the blur/fade)
-        activeSlide.classList.add('exit');
+         activeSlide.classList.add('exit');
 
         setTimeout(() => {
-            // 2. Hide the old slide fully
-            activeSlide.classList.remove('active', 'exit');
+             activeSlide.classList.remove('active', 'exit');
 
-            // 3. Increment index
-            currentTextIndex = (currentTextIndex + 1) % textSlides.length;
+             currentTextIndex = (currentTextIndex + 1) % textSlides.length;
 
-            // 4. Show the new slide
-            textSlides[currentTextIndex].classList.add('active');
-        }, 600); // This 600ms matches the CSS transition time
+             textSlides[currentTextIndex].classList.add('active');
+        }, 600);  
     }
 
-    // Run text swap every 5 seconds
-    setInterval(rotateText, 5000);
+     setInterval(rotateText, 5000);
 
 
-    // --- 2. BACKGROUND IMAGE SLIDER ---
-    const bgSlides = document.querySelectorAll('.bg-slide');
+     const bgSlides = document.querySelectorAll('.bg-slide');
     let currentBgIndex = 0;
 
     function rotateBackground() {
@@ -73,12 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         bgSlides[currentBgIndex].classList.add('active');
     }
     
-    // Run background swap every 7 seconds
-    setInterval(rotateBackground, 7000);
+     setInterval(rotateBackground, 7000);
 
 
-    // --- 3. WAVE ENGINE (Canvas) ---
-    const canvas = document.getElementById('waveCanvas');
+     const canvas = document.getElementById('waveCanvas');
     const ctx = canvas.getContext('2d');
     let width, height, waves = [];
 
@@ -142,8 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // about js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Select elements to reveal
-    const revealElements = [
+     const revealElements = [
         document.querySelector('.about-image-wrapper'),
         document.querySelector('.about-content h2'),
         document.querySelector('.about-content .lead'),
@@ -151,14 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.about .btn')
     ];
 
-    // Add the hidden class initially
-    revealElements.forEach(el => el.classList.add('reveal-up'));
+     revealElements.forEach(el => el.classList.add('reveal-up'));
 
     const aboutObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                aboutObserver.unobserve(entry.target); // Only animate once
+                aboutObserver.unobserve(entry.target);  
             }
         });
     }, {
@@ -185,8 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // Apply a staggered entrance
-                setTimeout(() => {
+                 setTimeout(() => {
                     entry.target.style.opacity = "1";
                     entry.target.style.transform = "translateY(0)";
                 }, index * 150);
@@ -196,8 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
 
     galleryItems.forEach(item => {
-        // Set initial hidden state for JS animation
-        item.style.opacity = "0";
+         item.style.opacity = "0";
         item.style.transform = "translateY(50px)";
         item.style.transition = "all 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
         galleryObserver.observe(item);
@@ -221,15 +204,13 @@ window.addEventListener('scroll', () => {
     const sectionHeight = processSection.offsetHeight;
     const windowHeight = window.innerHeight;
 
-    // Calculate progress percentage
-    // Starts filling when section enters middle of screen
+ 
     let progress = (windowHeight / 2 - sectionRect.top) / sectionHeight * 100;
     progress = Math.min(Math.max(progress, 0), 100);
     
     progressLine.style.height = `${progress}%`;
 
-    // Activate items based on scroll
-    items.forEach((item, index) => {
+     items.forEach((item, index) => {
         const itemRect = item.getBoundingClientRect();
         if (itemRect.top < windowHeight / 1.5) {
             item.classList.add('active');
@@ -268,21 +249,18 @@ const startCounters = () => {
     });
 };
 
-// --- The Critical Fix ---
-const counterObserver = new IntersectionObserver((entries) => {
+ const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             startCounters();
-            // Stop observing once the animation has started
-            counterObserver.unobserve(entry.target);
+             counterObserver.unobserve(entry.target);
         }
     });
 }, { 
-    threshold: 0.3 // Trigger when 30% of the section is visible
+    threshold: 0.3 
 });
 
-// Make sure this matches your HTML section class exactly
-const targetSection = document.querySelector('.why-us-featured');
+ const targetSection = document.querySelector('.why-us-featured');
 if (targetSection) {
     counterObserver.observe(targetSection);
 }
@@ -304,8 +282,7 @@ document.getElementById('price-toggle').addEventListener('click', function() {
     amounts.forEach(amount => {
         const target = isYearly ? amount.dataset.yearly : amount.dataset.monthly;
         
-        // Simple cross-fade value update
-        amount.style.opacity = '0';
+         amount.style.opacity = '0';
         setTimeout(() => {
             amount.innerText = target;
             amount.style.opacity = '1';
@@ -330,21 +307,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     avatarItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Get the index of the clicked avatar
-            const clickedIndex = item.getAttribute('data-index');
+             const clickedIndex = item.getAttribute('data-index');
 
-            // --- 1. Reset & Update Avatars (Selection State) ---
-            avatarItems.forEach(avatar => {
+             avatarItems.forEach(avatar => {
                 avatar.classList.remove('active');
             });
             item.classList.add('active');
 
-            // --- 2. Reset & Update Text Blocks (Fade State) ---
-            textBlocks.forEach(block => {
+             textBlocks.forEach(block => {
                 block.classList.remove('active');
             });
-            // Show the text block that matches the avatar index
-            textBlocks[clickedIndex].classList.add('active');
+             textBlocks[clickedIndex].classList.add('active');
         });
     });
 });
@@ -361,17 +334,14 @@ document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
         const parent = item.parentElement;
         
-        // If the clicked item is already active, close it
-        if (parent.classList.contains('active')) {
+         if (parent.classList.contains('active')) {
             parent.classList.remove('active');
         } else {
-            // Close all other open items first (Optional - for a true accordion)
-            document.querySelectorAll('.faq-item').forEach(child => {
+             document.querySelectorAll('.faq-item').forEach(child => {
                 child.classList.remove('active');
             });
             
-            // Open the clicked item
-            parent.classList.add('active');
+             parent.classList.add('active');
         }
     });
 });
@@ -392,8 +362,7 @@ document.addEventListener('mousemove', (e) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Move the decorative shapes based on mouse position
-    const shape1 = document.querySelector('.shape-1');
+     const shape1 = document.querySelector('.shape-1');
     const shape2 = document.querySelector('.shape-2');
     
     if (shape1 && shape2) {
@@ -424,8 +393,7 @@ const footerObserver = new IntersectionObserver((entries) => {
     }
 }, { threshold: 0.1 });
 
-// Initial State for Footer Columns
-document.querySelectorAll('.footer-col').forEach(col => {
+ document.querySelectorAll('.footer-col').forEach(col => {
     col.style.opacity = "0";
     col.style.transform = "translateY(30px)";
     col.style.transition = "all 0.8s cubic-bezier(0.22, 1, 0.36, 1)";
